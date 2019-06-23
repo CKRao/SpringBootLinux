@@ -60,6 +60,11 @@ public class TestController {
         return all;
     }
 
+    /**
+     * 删除接口
+     * @param name
+     * @return
+     */
     @DeleteMapping("/{name}")
     public Map deleteByName(@PathVariable String name) {
         customerRepository.deleteByName(name);
@@ -70,6 +75,12 @@ public class TestController {
         return result;
     }
 
+    /**
+     * 修改接口
+     * @param name
+     * @param customer
+     * @return
+     */
     @PutMapping("/{name}")
     public Customer updateByName(@PathVariable String name, @RequestBody Customer customer) {
         Customer old = customerRepository.findByName(name);
