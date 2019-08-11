@@ -44,9 +44,7 @@ public class TestController {
      */
     @GetMapping("/{name}")
     public Customer findByName(@PathVariable String name) {
-        Customer customer = customerRepository.findByName(name);
-
-        return customer;
+        return customerRepository.findByName(name);
     }
 
     /**
@@ -54,6 +52,7 @@ public class TestController {
      *
      * @return
      */
+
     @GetMapping("/all")
     public List<Customer> findAll() {
         List<Customer> all = customerRepository.findAll();
@@ -62,6 +61,7 @@ public class TestController {
 
     /**
      * 删除接口
+     *
      * @param name
      * @return
      */
@@ -77,6 +77,7 @@ public class TestController {
 
     /**
      * 修改接口
+     *
      * @param name
      * @param customer
      * @return
