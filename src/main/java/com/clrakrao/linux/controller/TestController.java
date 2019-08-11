@@ -2,6 +2,7 @@ package com.clrakrao.linux.controller;
 
 import com.clrakrao.linux.dao.CustomerRepository;
 import com.clrakrao.linux.entity.Customer;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -14,6 +15,7 @@ import java.util.Map;
  */
 @RestController()
 @RequestMapping("/test")
+@Slf4j
 public class TestController {
     @Autowired
     CustomerRepository customerRepository;
@@ -29,6 +31,7 @@ public class TestController {
         Customer save = customerRepository.save(customer);
         Map<String, String> result = new HashMap();
         if (save != null) {
+
             result.put("result", "success");
             return result;
         }
